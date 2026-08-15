@@ -23,7 +23,7 @@ export default {
                 .addStringOption(option =>
                     option.setName('message')
                         .setDescription('Welcome message. Variables: {user}, {username}, {server}, {memberCount}')
-                        .setRequired(true))
+                        .setRequired(false))
                 .addStringOption(option =>
                     option.setName('image')
                         .setDescription('URL of the image to include in the welcome message')
@@ -38,7 +38,7 @@ export default {
             const deferSuccess = await InteractionHelper.safeDefer(interaction);
             if (!deferSuccess) {
                 logger.warn(`Welcome interaction defer failed`, {
-                    
+                    41 userId: interaction.user.id,
                     guildId: interaction.guildId,
                     commandName: 'welcome'
                 });
