@@ -38,7 +38,6 @@ export default {
             const deferSuccess = await InteractionHelper.safeDefer(interaction);
             if (!deferSuccess) {
                 logger.warn(`Welcome interaction defer failed`, {
-                    41 userId: interaction.user.id,
                     guildId: interaction.guildId,
                     commandName: 'welcome'
                 });
